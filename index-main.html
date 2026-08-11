@@ -43,8 +43,8 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 1px 20px rgba(0,0,0,.
 #hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.018;mix-blend-mode:multiply}
 .h-inner{max-width:1200px;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:flex-end}
 .h-text{min-width:0}
-.h-photo{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.8rem;padding-bottom:.5rem}
-.photo-circle{width:300px;height:300px;border-radius:50%;overflow:hidden;border:3px solid rgba(140,58,26,.15);box-shadow:0 0 0 10px rgba(140,58,26,.08),0 0 0 22px rgba(140,58,26,.04);background:var(--coral-lt);position:relative;transition:box-shadow .3s}
+.h-photo{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.8rem;padding-bottom:.5rem;transform:translateY(3.5rem)}
+.photo-circle{width:360px;height:360px;border-radius:50%;overflow:hidden;border:3px solid rgba(140,58,26,.15);box-shadow:0 0 0 12px rgba(140,58,26,.08),0 0 0 26px rgba(140,58,26,.04);background:var(--coral-lt);position:relative;transition:box-shadow .3s}
 .photo-circle:hover{box-shadow:0 0 0 10px rgba(140,58,26,.18),0 0 0 24px rgba(140,58,26,.08)}
 .photo-circle img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .photo-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:rgba(0,0,0,.2);font-size:.65rem;text-align:center;padding:.8rem}
@@ -58,14 +58,14 @@ h1.name span.dim{color:var(--mid);font-weight:300}
 .h-bottom{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem}
 .h-desc{max-width:500px}
 .h-roles{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
-.h-role{font-size:.72rem;font-weight:600;letter-spacing:.05em;padding:.3rem .8rem;border:1px solid var(--faint);border-radius:4px;color:var(--mid);background:var(--cream)}
-.h-qs-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.5rem;opacity:.8}
-.h-desc p{font-size:.85rem;font-weight:300;color:var(--mid);line-height:1.8}
+.h-role{font-size:.72rem;font-weight:600;letter-spacing:.05em;padding:.3rem .8rem;border:1px solid rgba(0,0,0,.15);border-radius:4px;color:var(--ink);background:var(--cream)}
+.h-qs-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.5rem;opacity:1}
+.h-desc p{font-size:.85rem;font-weight:400;color:#3a3330;line-height:1.8}
 .h-btns{display:flex;gap:.7rem;flex-shrink:0;align-items:center}
-.hbtn-p{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 2rem;background:var(--coral);color:#fff;text-decoration:none;border-radius:6px;transition:all .2s}
+.hbtn-p{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 2rem;min-width:162px;text-align:center;background:var(--coral);color:#fff;text-decoration:none;border:1.5px solid var(--coral);border-radius:6px;transition:all .2s}
 .hbtn-p:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 24px var(--coral-glow)}
-.hbtn-s{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 2rem;background:transparent;color:var(--ink);text-decoration:none;border:1.5px solid var(--faint);border-radius:6px;transition:all .2s}
-.hbtn-s:hover{border-color:var(--coral);color:var(--coral)}
+.hbtn-s{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.8rem 2rem;min-width:162px;text-align:center;background:transparent;color:var(--ink);text-decoration:none;border:1.5px solid var(--mid);border-radius:6px;transition:border-color .2s,transform .2s}
+.hbtn-s:hover{border-color:var(--ink);transform:translateY(-1px)}
 .scroll-hint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;z-index:2}
 .sh-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.15));animation:drawDown 2s ease-in-out infinite}
 @keyframes drawDown{0%{height:0;opacity:0}50%{height:48px;opacity:1}100%{height:48px;opacity:0}}
@@ -117,17 +117,17 @@ section{padding:7rem 5vw}
 
 /* ═══ EXPERIENCE ═══ */
 #experience{background:var(--white)}
-.exp-list{display:flex;flex-direction:column;gap:0}
-.exp-item{padding:3rem 0;border-bottom:1px solid var(--faint);position:relative;transition:padding .2s}
-.exp-item:first-child{border-top:1px solid var(--faint)}
-.exp-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
+.exp-list{display:flex;flex-direction:column;gap:1.2rem}
+.exp-item{padding:2.2rem 2.5rem;border:1.5px solid var(--faint);border-radius:14px;position:relative;transition:all .25s;overflow:hidden;background:var(--white)}
+.exp-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .35s ease;border-radius:3px 0 0 3px}
+.exp-item:hover{border-color:rgba(140,58,26,.2);box-shadow:0 8px 32px var(--coral-glow);transform:translateY(-2px)}
 .exp-item:hover::before{transform:scaleY(1)}
-.exp-item:hover{padding-left:1.4rem;background:var(--cream)}
-.exp-header{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.3rem 1.5rem;margin-bottom:1.6rem}
-.e-company{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);align-self:center}
-.e-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2;align-self:center}
-.e-date{font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-lt);padding:.3rem .8rem;border-radius:4px;border:1px solid rgba(140,58,26,.15);white-space:nowrap;justify-self:end;align-self:center}
-.e-loc{font-size:.63rem;font-weight:500;color:var(--mid);display:flex;align-items:center;gap:.3rem;letter-spacing:.02em;justify-self:end;align-self:center}
+.exp-header{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.6rem}
+.exp-hrow{display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.e-company{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--coral)}
+.e-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+.e-date{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-lt);padding:.28rem .8rem;border-radius:4px;border:1px solid rgba(140,58,26,.15);white-space:nowrap;flex-shrink:0}
+.e-loc{font-size:.65rem;font-weight:500;color:var(--mid);display:flex;align-items:center;gap:.3rem;letter-spacing:.02em;white-space:nowrap;flex-shrink:0}
 .exp-blocks{display:flex;flex-direction:column;gap:1.4rem}
 .exp-block-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);opacity:.75;margin-bottom:.5rem}
 .exp-block p{font-size:.84rem;font-weight:300;color:#555;line-height:1.8}
@@ -149,7 +149,7 @@ section{padding:7rem 5vw}
 .ptab.active[data-tab="retail"]{background:var(--ret);border-color:var(--ret);color:#fff}
 .ptab.active[data-tab="finance"]{background:var(--fin);border-color:var(--fin);color:#fff}
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--faint)}
-.proj-card{background:var(--white);padding:2.2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;cursor:pointer;transition:background .2s;text-decoration:none;color:inherit}
+.proj-card{background:var(--white);padding:2.2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;cursor:pointer;transition:box-shadow .25s,transform .25s;text-decoration:none;color:inherit}
 .proj-card.hidden{display:none}
 .proj-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
 .proj-card[data-domain="healthcare"]::after{background:var(--hc)}
@@ -157,7 +157,7 @@ section{padding:7rem 5vw}
 .proj-card[data-domain="retail"]::after{background:var(--ret)}
 .proj-card[data-domain="finance"]::after{background:var(--fin)}
 .proj-card:hover::after{transform:scaleX(1)}
-.proj-card:hover{background:var(--cream)}
+.proj-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.05);transform:translateY(-3px);z-index:1}
 .pc-top{display:flex;justify-content:space-between;align-items:flex-start}
 .pc-badge{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .65rem;border-radius:4px}
 .b-hc{color:var(--hc);background:var(--hc-lt)}
@@ -205,7 +205,7 @@ section{padding:7rem 5vw}
 .hobby-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 1.1rem;border:1.5px solid var(--faint);border-radius:10px;background:var(--white);transition:all .2s;cursor:default}
 .hobby-card:hover{border-color:rgba(140,58,26,.3);background:var(--coral-lt);transform:translateY(-2px);box-shadow:0 6px 20px var(--coral-glow)}
 .hobby-card .hc-icon{color:var(--coral);display:flex}
-.hobby-card .hc-label{font-size:.82rem;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.hobby-card .hc-label{font-family:'Syne',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink);letter-spacing:.01em}
 .b-copy{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.8}
 .vol-list{display:flex;flex-direction:column;gap:1rem}
 .vol-item{display:flex;flex-direction:column;gap:.9rem;padding:1.8rem;background:var(--white);border:1px solid var(--faint);border-radius:12px;transition:all .2s}
@@ -279,14 +279,15 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
   .whoami-layout{grid-template-columns:1fr;gap:3rem}
   .usp-grid{grid-template-columns:1fr}
   .proj-grid{grid-template-columns:1fr 1fr}
-  .exp-header{grid-template-columns:1fr}
+  .exp-hrow{flex-wrap:wrap;gap:.5rem}
+  .exp-item{padding:1.8rem 1.5rem}
   .edu-row{grid-template-columns:1fr;gap:.4rem}
   .ach-cards{grid-template-columns:1fr}
   .beyond-layout{grid-template-columns:1fr;gap:3rem}
   h1.name{font-size:clamp(3rem,12vw,6rem)}
   .h-inner{grid-template-columns:1fr;gap:2rem}
   .h-photo{order:-1;padding-top:2rem}
-  .photo-circle{width:200px;height:200px}
+  .photo-circle{width:240px;height:240px}
   .c-calendly{flex-direction:column;align-items:flex-start}
   .contact-grid{grid-template-columns:1fr;gap:3rem}
 }
@@ -332,8 +333,8 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
           <p>I envision contributing to data-driven strategies leveraging my expertise in statistical modeling, predictive analytics and advanced data visualization. I am a Data Analyst proficient working with Python, SQL, and Power BI on end-to-end analytical solutions. My goal is to translate complex data into actionable insights, driving business efficiency and informed decision-making.</p>
         </div>
         <div class="h-btns">
-          <a href="#projects" class="hbtn-p">View Projects</a>
-          <a href="#contact" class="hbtn-s">Get in Touch</a>
+          <a href="#projects" class="hbtn-s">View Projects</a>
+          <a href="#contact" class="hbtn-p">Get in Touch</a>
         </div>
       </div>
     </div>
@@ -344,7 +345,6 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <span class="photo-label"> </span>
     </div>
   </div>
-  <div class="scroll-hint"><div class="sh-line"></div><span class="sh-lbl">Scroll</span></div>
 </section>
 
 
@@ -416,10 +416,14 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- UMass -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div class="e-company">UMass Amherst</div>
-          <span class="e-date">Mar – May 2026</span>
-          <div class="e-role">Data Analyst, Sustainability Research</div>
-          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Amherst, MA</span>
+          <div class="exp-hrow">
+            <div class="e-company">UMass Amherst</div>
+            <span class="e-date">Mar – May 2026</span>
+          </div>
+          <div class="exp-hrow">
+            <div class="e-role">Data Analyst, Sustainability Research</div>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Amherst, MA</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
@@ -450,10 +454,14 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Pantech AI -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div class="e-company">Pantech AI</div>
-          <span class="e-date">Jul – Aug 2025</span>
-          <div class="e-role">Generative AI Intern</div>
-          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Remote</span>
+          <div class="exp-hrow">
+            <div class="e-company">Pantech AI</div>
+            <span class="e-date">Jul – Aug 2025</span>
+          </div>
+          <div class="exp-hrow">
+            <div class="e-role">Generative AI Intern</div>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Remote</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
@@ -476,10 +484,14 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Data Patterns -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div class="e-company">Data Patterns</div>
-          <span class="e-date">May 2023 – Jun 2024</span>
-          <div class="e-role">Graduate Engineer Trainee, Data Analyst</div>
-          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          <div class="exp-hrow">
+            <div class="e-company">Data Patterns</div>
+            <span class="e-date">May 2023 – Jun 2024</span>
+          </div>
+          <div class="exp-hrow">
+            <div class="e-role">Graduate Engineer Trainee, Data Analyst</div>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
@@ -510,10 +522,14 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Aditya Estates -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div class="e-company">Aditya Estates and Builders</div>
-          <span class="e-date">May 2022 – May 2023</span>
-          <div class="e-role">Business Analyst &amp; Project Lead</div>
-          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          <div class="exp-hrow">
+            <div class="e-company">Aditya Estates and Builders</div>
+            <span class="e-date">May 2022 – May 2023</span>
+          </div>
+          <div class="exp-hrow">
+            <div class="e-role">Business Analyst &amp; Project Lead</div>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
