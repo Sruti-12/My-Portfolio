@@ -71,13 +71,6 @@ h1.name span.dim{color:var(--mid);font-weight:300}
 @keyframes drawDown{0%{height:0;opacity:0}50%{height:48px;opacity:1}100%{height:48px;opacity:0}}
 .sh-lbl{font-size:.58rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}
 
-/* ═══ TICKER ═══ */
-.ticker{background:var(--ink);overflow:hidden;padding:.65rem 0}
-.t-track{display:flex;white-space:nowrap;animation:roll 35s linear infinite}
-.t-track:hover{animation-play-state:paused}
-.t-item{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:0 2.5rem;color:rgba(255,255,255,.3)}
-.t-sep{color:var(--coral);opacity:.8}
-@keyframes roll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ═══ SECTION BASE ═══ */
 section{padding:7rem 5vw}
@@ -133,7 +126,9 @@ section{padding:7rem 5vw}
 .exp-header{display:grid;grid-template-columns:1fr auto;align-items:start;margin-bottom:1.6rem;gap:1rem}
 .e-company{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:.35rem}
 .e-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
-.e-period-badge{font-size:.67rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--mid);background:var(--faint);padding:.3rem .8rem;border-radius:100px;white-space:nowrap;height:fit-content}
+.exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
+.e-date{font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-lt);padding:.3rem .8rem;border-radius:4px;border:1px solid rgba(140,58,26,.15);white-space:nowrap}
+.e-loc{font-size:.63rem;font-weight:500;color:var(--mid);display:flex;align-items:center;gap:.3rem;letter-spacing:.02em}
 .exp-blocks{display:flex;flex-direction:column;gap:1.4rem}
 .exp-block-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);opacity:.75;margin-bottom:.5rem}
 .exp-block p{font-size:.84rem;font-weight:300;color:#555;line-height:1.8}
@@ -198,9 +193,10 @@ section{padding:7rem 5vw}
 .ed-school{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;letter-spacing:-.01em}
 .ed-deg{font-size:.83rem;font-weight:600;color:var(--coral);margin-bottom:.5rem}
 .ed-detail{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.65}
-.certs-row{padding-top:2.2rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
-.certs-lbl{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid)}
-.cert-chip{font-size:.72rem;font-weight:500;color:var(--mid);padding:.28rem .8rem;border:1px solid var(--faint);border-radius:4px;background:var(--cream)}
+.certs-row{padding-top:2.5rem;display:flex;flex-wrap:wrap;gap:.8rem}
+.certs-lbl{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);flex-basis:100%;margin-bottom:.2rem}
+.cert-chip{font-size:.88rem;font-weight:600;color:var(--ink);padding:.75rem 1.4rem;border:1.5px solid var(--faint);border-radius:8px;background:var(--white);transition:all .2s}
+.cert-chip:hover{border-color:rgba(140,58,26,.25);box-shadow:0 4px 16px var(--coral-glow);background:var(--cream)}
 
 /* ═══ BEYOND ═══ */
 #beyond{background:var(--cream);padding:7rem 5vw}
@@ -253,6 +249,26 @@ section{padding:7rem 5vw}
 .c-cal-btn{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.7rem 1.6rem;border-radius:6px;text-decoration:none;background:var(--coral);color:#fff;white-space:nowrap;transition:all .2s;flex-shrink:0}
 .c-cal-btn:hover{opacity:.88;transform:translateY(-1px)}
 
+/* ═══ CONTACT GRID ═══ */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3rem}
+.contact-card{background:var(--white);border:1px solid var(--faint);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.cc-row{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 1.8rem;text-decoration:none;color:inherit;border-bottom:1px solid var(--faint);transition:background .15s}
+.cc-row:last-child{border-bottom:0}
+.cc-row:hover{background:var(--cream)}
+.cc-icon{width:36px;height:36px;border-radius:8px;background:var(--coral-lt);display:grid;place-items:center;flex-shrink:0;color:var(--coral)}
+.cc-body{flex:1;min-width:0}
+.cc-lbl{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.15rem}
+.cc-val{font-size:.82rem;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cc-arrow{font-size:.9rem;color:var(--faint);transition:color .2s,transform .2s;flex-shrink:0}
+.cc-row:hover .cc-arrow{color:var(--coral);transform:translate(2px,-2px)}
+.cc-row-cal{background:var(--coral)}
+.cc-row-cal .cc-lbl{color:rgba(255,255,255,.65)}
+.cc-row-cal .cc-val{color:#fff}
+.cc-row-cal .cc-arrow{color:rgba(255,255,255,.45)}
+.cc-icon-cal{background:rgba(255,255,255,.15) !important;color:#fff !important}
+.cc-row-cal:hover{background:rgba(120,45,16,.95)}
+.cc-row-cal:hover .cc-arrow{color:#fff;transform:translate(2px,-2px)}
+
 /* ═══ FOOTER ═══ */
 footer{background:var(--ink);padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
 footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.2)}
@@ -278,6 +294,7 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
   .h-photo{order:-1;padding-top:2rem}
   .photo-circle{width:200px;height:200px}
   .c-calendly{flex-direction:column;align-items:flex-start}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
 }
 @media(max-width:640px){
   .proj-grid{grid-template-columns:1fr}
@@ -338,13 +355,6 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
   <div class="scroll-hint"><div class="sh-line"></div><span class="sh-lbl">Scroll</span></div>
 </section>
 
-<!-- ─── TICKER ─── -->
-<div class="ticker">
-  <div class="t-track">
-    <span class="t-item">Python <span class="t-sep">✦</span></span><span class="t-item">SQL <span class="t-sep">✦</span></span><span class="t-item">Power BI <span class="t-sep">✦</span></span><span class="t-item">Tableau <span class="t-sep">✦</span></span><span class="t-item">Machine Learning <span class="t-sep">✦</span></span><span class="t-item">TensorFlow <span class="t-sep">✦</span></span><span class="t-item">scikit-learn <span class="t-sep">✦</span></span><span class="t-item">ETL Pipelines <span class="t-sep">✦</span></span><span class="t-item">Gemini API <span class="t-sep">✦</span></span><span class="t-item">Streamlit <span class="t-sep">✦</span></span><span class="t-item">NLP <span class="t-sep">✦</span></span><span class="t-item">Deep Learning <span class="t-sep">✦</span></span><span class="t-item">Data Visualization <span class="t-sep">✦</span></span><span class="t-item">ArcGIS <span class="t-sep">✦</span></span>
-    <span class="t-item">Python <span class="t-sep">✦</span></span><span class="t-item">SQL <span class="t-sep">✦</span></span><span class="t-item">Power BI <span class="t-sep">✦</span></span><span class="t-item">Tableau <span class="t-sep">✦</span></span><span class="t-item">Machine Learning <span class="t-sep">✦</span></span><span class="t-item">TensorFlow <span class="t-sep">✦</span></span><span class="t-item">scikit-learn <span class="t-sep">✦</span></span><span class="t-item">ETL Pipelines <span class="t-sep">✦</span></span><span class="t-item">Gemini API <span class="t-sep">✦</span></span><span class="t-item">Streamlit <span class="t-sep">✦</span></span><span class="t-item">NLP <span class="t-sep">✦</span></span><span class="t-item">Deep Learning <span class="t-sep">✦</span></span><span class="t-item">Data Visualization <span class="t-sep">✦</span></span><span class="t-item">ArcGIS <span class="t-sep">✦</span></span>
-  </div>
-</div>
 
 <!-- ─── WHO AM I ─── -->
 <section id="whoami">
@@ -418,12 +428,19 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
             <div class="e-company">UMass Amherst</div>
             <div class="e-role">Data Analyst, Sustainability Research</div>
           </div>
-          <span class="e-period-badge">Mar – May 2026 · Amherst, MA</span>
+          <div class="exp-meta">
+            <span class="e-date">Mar – May 2026</span>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Amherst, MA</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
             <div class="exp-block-label">Primary Responsibilities</div>
-            <p class="exp-block">Designed and implemented data systems, performed detailed data analysis, and created visual reports to identify areas for cost reduction and efficiency improvement in sustainability efforts.</p>
+            <ul class="exp-pts">
+              <li>Designed and built end-to-end data systems from scratch to track sustainability metrics and surface inefficiencies.</li>
+              <li>Performed detailed data analysis across operational datasets to identify cost reduction opportunities.</li>
+              <li>Created visual reports and dashboards for 5+ stakeholder teams, delivering actionable insights on schedule.</li>
+            </ul>
           </div>
           <div>
             <div class="exp-block-label">Key Contributions</div>
@@ -449,7 +466,10 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
             <div class="e-company">Pantech AI</div>
             <div class="e-role">Generative AI Intern</div>
           </div>
-          <span class="e-period-badge">Jul – Aug 2025 · Remote</span>
+          <div class="exp-meta">
+            <span class="e-date">Jul – Aug 2025</span>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Remote</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
@@ -476,12 +496,19 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
             <div class="e-company">Data Patterns</div>
             <div class="e-role">Graduate Engineer Trainee, Data Analyst</div>
           </div>
-          <span class="e-period-badge">May 2023 – Jun 2024 · Chennai, India</span>
+          <div class="exp-meta">
+            <span class="e-date">May 2023 – Jun 2024</span>
+            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
             <div class="exp-block-label">Primary Responsibilities</div>
-            <p class="exp-block">Ensured data quality, performed statistical analysis on large operational datasets, and collaborated with technical teams to enhance data infrastructure and accessibility.</p>
+            <ul class="exp-pts">
+              <li>Ensured data quality across large aerospace operational datasets using automated Python and SQL validation checks.</li>
+              <li>Performed statistical analysis to identify trends and bottlenecks in mission-critical systems.</li>
+              <li>Collaborated with IT and Engineering to enhance data infrastructure and improve system accessibility for analysts.</li>
+            </ul>
           </div>
           <div>
             <div class="exp-block-label">Key Contributions</div>
@@ -507,12 +534,18 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
             <div class="e-company">Aditya Estates and Builders</div>
             <div class="e-role">Business Analyst & Project Lead</div>
           </div>
-          <span class="e-period-badge">May 2022 – May 2023</span>
+          <div class="exp-meta">
+            <span class="e-date">May 2022 – May 2023</span>
+          </div>
         </div>
         <div class="exp-blocks">
           <div>
             <div class="exp-block-label">Primary Responsibilities</div>
-            <p class="exp-block">Led market intelligence, developed robust business strategies, and conducted in-depth investment analysis across diverse real estate sectors. Used advanced data analytics to forecast market trends, optimize land acquisitions, and support multi-million-dollar development projects.</p>
+            <ul class="exp-pts">
+              <li>Led market intelligence and developed data-driven business strategies across residential and commercial real estate sectors.</li>
+              <li>Conducted in-depth investment analysis and feasibility studies for multi-million-dollar land acquisitions.</li>
+              <li>Used advanced analytics to forecast market trends, optimize site selection, and inform executive expansion decisions.</li>
+            </ul>
           </div>
           <div>
             <div class="exp-block-label">Key Contributions</div>
@@ -606,6 +639,7 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
         <p class="pc-desc">CNN/VGG16/ResNet50 trained on 25,000 histopathological images. ~99% training accuracy on multi-class tissue classification.</p>
         <div class="pc-tools"><span class="pc-tool">TensorFlow</span><span class="pc-tool">Keras</span><span class="pc-tool">CNN</span></div>
       </a>
+      <div style="background:var(--white);pointer-events:none;"></div>
     </div>
   </div>
 </section>
@@ -713,59 +747,72 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
 <!-- ─── CONTACT ─── -->
 <section id="contact">
   <div class="contact-inner">
-    <p class="c-label rv">Available now</p>
-    <h2 class="c-headline rv rv-d1">Let's build<br/><em>something great.</em></h2>
-    <p class="c-sub rv rv-d2">Looking for roles in Data Analytics, Business Analytics, Data Engineering, and Product Management. If something sounds like a fit, reach out. I reply fast.</p>
+    <div class="contact-grid rv">
 
-    <!-- contact info -->
-    <div class="c-info rv rv-d2">
-      <a href="mailto:srutilnarasimhan@gmail.com" class="c-info-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        srutilnarasimhan@gmail.com
-      </a>
-      <span class="c-divider"></span>
-      <a href="https://www.linkedin.com/in/sruti-lakshmi-narasimhan/" class="c-info-item" target="_blank">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <span class="c-divider"></span>
-      <a href="https://github.com/Sruti-12" class="c-info-item" target="_blank">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        GitHub
-      </a>
-    </div>
-
-    <div class="c-buttons rv rv-d3">
-      <a href="mailto:srutilnarasimhan@gmail.com" class="cb-main">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        Send an Email
-      </a>
-      <a href="https://www.linkedin.com/in/sruti-lakshmi-narasimhan/" class="cb-ghost" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://github.com/Sruti-12" class="cb-ghost" target="_blank">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        GitHub
-      </a>
-      <a href="#" class="cb-ghost">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Resume
-      </a>
-    </div>
-
-    <!-- Calendly -->
-    <a href="https://calendly.com/srutilnarasimhan/30min" target="_blank" class="c-calendly rv rv-d4">
-      <div class="c-cal-left">
-        <div class="c-cal-icon">📅</div>
-        <div class="c-cal-title">Book a call, let's talk</div>
-        <div class="c-cal-sub">30 minutes · Free · I'd love to hear about your team and share more of my story.</div>
+      <!-- Left: headline + description + CTA -->
+      <div class="contact-left">
+        <p class="c-label">Available now</p>
+        <h2 class="c-headline">Let's build<br/><em>something great.</em></h2>
+        <p class="c-sub">Looking for roles in Data Analytics, Business Analytics, Data Engineering, and Product Management. If something sounds like a fit, reach out. I reply fast.</p>
       </div>
-      <span class="c-cal-btn">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Book a 30-min call
-      </span>
-    </a>
+
+      <!-- Right: contact card -->
+      <div class="contact-right">
+        <div class="contact-card">
+          <a href="mailto:srutilnarasimhan@gmail.com" class="cc-row">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-lbl">Email</div>
+              <div class="cc-val">srutilnarasimhan@gmail.com</div>
+            </div>
+            <span class="cc-arrow">↗</span>
+          </a>
+          <a href="https://www.linkedin.com/in/sruti-lakshmi-narasimhan/" class="cc-row" target="_blank">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-lbl">LinkedIn</div>
+              <div class="cc-val">sruti-lakshmi-narasimhan</div>
+            </div>
+            <span class="cc-arrow">↗</span>
+          </a>
+          <a href="https://github.com/Sruti-12" class="cc-row" target="_blank">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-lbl">GitHub</div>
+              <div class="cc-val">Sruti-12</div>
+            </div>
+            <span class="cc-arrow">↗</span>
+          </a>
+          <a href="#" class="cc-row">
+            <div class="cc-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-lbl">Resume</div>
+              <div class="cc-val">Download PDF</div>
+            </div>
+            <span class="cc-arrow">↗</span>
+          </a>
+          <a href="https://calendly.com/srutilnarasimhan/30min" target="_blank" class="cc-row cc-row-cal">
+            <div class="cc-icon cc-icon-cal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="cc-body">
+              <div class="cc-lbl">Schedule · 30 min · Free</div>
+              <div class="cc-val">Book a call, let's talk</div>
+            </div>
+            <span class="cc-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
