@@ -79,7 +79,7 @@ section{padding:7rem 5vw}
 .s-title{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1;margin-bottom:2.25rem}
 
 /* ═══ WHO AM I ═══ */
-#whoami{background:var(--cream);padding:7rem 5vw}
+#whoami{background:linear-gradient(145deg,rgba(140,58,26,.07) 0%,rgba(255,248,244,1) 30%,rgba(255,255,255,1) 60%,rgba(245,237,232,.55) 100%);padding:7rem 5vw}
 .whoami-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .whoami-text p{font-size:.92rem;font-weight:300;color:#555;line-height:1.9;margin-bottom:1rem}
 .whoami-text p:last-child{margin-bottom:0}
@@ -111,7 +111,7 @@ section{padding:7rem 5vw}
 .usp-card::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
 .usp-card:hover::before{transform:scaleY(1)}
 .usp-card:hover{border-color:rgba(140,58,26,.2);box-shadow:0 8px 32px var(--coral-glow)}
-.usp-icon{font-size:1.8rem;line-height:1}
+.usp-icon{width:52px;height:52px;display:grid;place-items:center;background:var(--coral-lt);border-radius:12px;color:var(--coral);flex-shrink:0}
 .usp-card h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.3}
 .usp-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.75}
 
@@ -123,12 +123,11 @@ section{padding:7rem 5vw}
 .exp-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--coral);transform:scaleY(0);transform-origin:top;transition:transform .3s ease}
 .exp-item:hover::before{transform:scaleY(1)}
 .exp-item:hover{padding-left:1.4rem;background:var(--cream)}
-.exp-header{display:grid;grid-template-columns:1fr auto;align-items:start;margin-bottom:1.6rem;gap:1rem}
-.e-company{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);margin-bottom:.35rem}
-.e-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
-.exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem}
-.e-date{font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-lt);padding:.3rem .8rem;border-radius:4px;border:1px solid rgba(140,58,26,.15);white-space:nowrap}
-.e-loc{font-size:.63rem;font-weight:500;color:var(--mid);display:flex;align-items:center;gap:.3rem;letter-spacing:.02em}
+.exp-header{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:.3rem 1.5rem;margin-bottom:1.6rem}
+.e-company{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral);align-self:center}
+.e-role{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.2;align-self:center}
+.e-date{font-size:.67rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--coral);background:var(--coral-lt);padding:.3rem .8rem;border-radius:4px;border:1px solid rgba(140,58,26,.15);white-space:nowrap;justify-self:end;align-self:center}
+.e-loc{font-size:.63rem;font-weight:500;color:var(--mid);display:flex;align-items:center;gap:.3rem;letter-spacing:.02em;justify-self:end;align-self:center}
 .exp-blocks{display:flex;flex-direction:column;gap:1.4rem}
 .exp-block-label{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);opacity:.75;margin-bottom:.5rem}
 .exp-block p{font-size:.84rem;font-weight:300;color:#555;line-height:1.8}
@@ -174,13 +173,13 @@ section{padding:7rem 5vw}
 .pc-tool{font-size:.62rem;font-weight:500;color:var(--mid);padding:.2rem .6rem;border:1px solid var(--faint);border-radius:3px}
 
 /* ═══ ACHIEVEMENTS ═══ */
-#achievements{background:var(--cream);position:relative;overflow:hidden;padding:7rem 5vw}
+#achievements{background:var(--white);position:relative;overflow:hidden;padding:7rem 5vw}
 #achievements::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 500px at 100% 0%,rgba(140,80,45,.08) 0%,transparent 65%),radial-gradient(ellipse 500px 400px at 0% 100%,rgba(120,65,35,.07) 0%,transparent 60%)}
 .ach-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .ach-card{background:var(--white);border:1px solid var(--faint);border-radius:12px;padding:2.5rem;display:flex;flex-direction:column;gap:1rem;transition:border-color .2s,box-shadow .2s;position:relative;overflow:hidden}
 .ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--coral),rgba(140,58,26,.3))}
 .ach-card:hover{border-color:rgba(140,58,26,.25);box-shadow:0 8px 32px var(--coral-glow)}
-.ac-icon{font-size:2.4rem;line-height:1}
+.ac-icon{width:56px;height:56px;display:grid;place-items:center;color:var(--coral)}
 .ac-tag{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);opacity:.7}
 .ach-card h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.3;letter-spacing:-.01em}
 .ach-card p{font-size:.82rem;font-weight:300;color:var(--mid);line-height:1.7}
@@ -202,19 +201,21 @@ section{padding:7rem 5vw}
 #beyond{background:var(--cream);padding:7rem 5vw}
 .beyond-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
 .b-left .b-sec-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:1.2rem;letter-spacing:-.01em}
-.interest-grid{display:flex;flex-wrap:wrap;gap:.55rem;margin-bottom:1.5rem}
-.i-pill{font-size:.82rem;font-weight:500;padding:.5rem 1.2rem;border:1.5px solid var(--faint);border-radius:6px;color:var(--ink);background:var(--white);transition:all .15s;cursor:default}
-.i-pill:hover{border-color:var(--coral);color:var(--coral);background:var(--coral-lt)}
+.hobby-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.8rem}
+.hobby-card{display:flex;flex-direction:column;align-items:flex-start;gap:.6rem;padding:1.2rem 1.1rem;border:1.5px solid var(--faint);border-radius:10px;background:var(--white);transition:all .2s;cursor:default}
+.hobby-card:hover{border-color:rgba(140,58,26,.3);background:var(--coral-lt);transform:translateY(-2px);box-shadow:0 6px 20px var(--coral-glow)}
+.hobby-card .hc-icon{color:var(--coral);display:flex}
+.hobby-card .hc-label{font-size:.82rem;font-weight:700;color:var(--ink);letter-spacing:.01em}
 .b-copy{font-size:.84rem;font-weight:300;color:var(--mid);line-height:1.8}
-.vol-list{display:flex;flex-direction:column;gap:1.8rem}
-.vol-item{display:grid;grid-template-columns:48px 1fr;gap:1rem;padding:1.5rem;background:var(--white);border:1px solid var(--faint);border-radius:8px;transition:all .2s}
-.vol-item:hover{border-color:rgba(140,58,26,.3);box-shadow:0 4px 20px var(--coral-glow)}
-.v-icon{width:40px;height:40px;border-radius:8px;background:var(--coral-lt);display:grid;place-items:center;font-size:1.2rem;flex-shrink:0}
+.vol-list{display:flex;flex-direction:column;gap:1rem}
+.vol-item{display:flex;flex-direction:column;gap:.9rem;padding:1.8rem;background:var(--white);border:1px solid var(--faint);border-radius:12px;transition:all .2s}
+.vol-item:hover{border-color:rgba(140,58,26,.25);box-shadow:0 6px 24px var(--coral-glow);transform:translateY(-2px)}
+.v-icon{width:44px;height:44px;border-radius:10px;background:var(--coral-lt);display:grid;place-items:center;color:var(--coral);flex-shrink:0}
 .v-body h4{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:.3rem}
 .v-body p{font-size:.78rem;font-weight:300;color:var(--mid);line-height:1.65}
 
 /* ═══ CONTACT ═══ */
-#contact{background:var(--cream);padding:9rem 5vw;position:relative;overflow:hidden}
+#contact{background:var(--white);padding:9rem 5vw;position:relative;overflow:hidden}
 #contact::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 900px 700px at -10% 60%,rgba(150,80,45,.18) 0%,rgba(180,120,85,.08) 45%,transparent 68%),radial-gradient(ellipse 600px 500px at 110% 30%,rgba(160,110,80,.1) 0%,transparent 60%)}
 #contact::after{content:'HELLO';position:absolute;right:-2rem;bottom:-3rem;font-family:'Syne',sans-serif;font-weight:800;font-size:18rem;line-height:.8;color:rgba(0,0,0,.03);letter-spacing:-.04em;pointer-events:none;user-select:none}
 .contact-inner{max-width:900px;position:relative;z-index:1}
@@ -250,7 +251,7 @@ section{padding:7rem 5vw}
 .c-cal-btn:hover{opacity:.88;transform:translateY(-1px)}
 
 /* ═══ CONTACT GRID ═══ */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-bottom:3rem}
+.contact-grid{display:grid;grid-template-columns:1fr 2fr;gap:4rem;align-items:start;margin-bottom:3rem}
 .contact-card{background:var(--white);border:1px solid var(--faint);border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.04)}
 .cc-row{display:flex;align-items:center;gap:1.2rem;padding:1.4rem 1.8rem;text-decoration:none;color:inherit;border-bottom:1px solid var(--faint);transition:background .15s}
 .cc-row:last-child{border-bottom:0}
@@ -261,13 +262,6 @@ section{padding:7rem 5vw}
 .cc-val{font-size:.82rem;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cc-arrow{font-size:.9rem;color:var(--faint);transition:color .2s,transform .2s;flex-shrink:0}
 .cc-row:hover .cc-arrow{color:var(--coral);transform:translate(2px,-2px)}
-.cc-row-cal{background:var(--coral)}
-.cc-row-cal .cc-lbl{color:rgba(255,255,255,.65)}
-.cc-row-cal .cc-val{color:#fff}
-.cc-row-cal .cc-arrow{color:rgba(255,255,255,.45)}
-.cc-icon-cal{background:rgba(255,255,255,.15) !important;color:#fff !important}
-.cc-row-cal:hover{background:rgba(120,45,16,.95)}
-.cc-row-cal:hover .cc-arrow{color:#fff;transform:translate(2px,-2px)}
 
 /* ═══ FOOTER ═══ */
 footer{background:var(--ink);padding:1.5rem 5vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
@@ -315,7 +309,6 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
     <li><a href="#achievements">Awards</a></li>
     <li><a href="#beyond">Beyond</a></li>
   </ul>
-  <a class="n-cta" href="mailto:srutilnarasimhan@gmail.com">Let's Talk</a>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -324,9 +317,8 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
     <div class="h-text">
       <div class="h-avail"><span class="avail-dot"></span>Open to full-time opportunities</div>
       <h1 class="name">
-        <span>Sruti</span>
-        <span>Lakshmi</span>
-        <span class="dim">Narasimhan</span>
+        <span>Sruti L</span>
+        <span>Narasimhan</span>
       </h1>
       <div class="h-bottom">
         <div class="h-desc">
@@ -391,22 +383,22 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
     <h2 class="s-title rv rv-d1">What Sets Me Apart</h2>
     <div class="usp-grid">
       <div class="usp-card rv">
-        <div class="usp-icon">🏗️</div>
+        <div class="usp-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4 3 9 3s9-1.34 9-3v-4"/></svg></div>
         <h3>End-to-End Data Systems Builder</h3>
         <p>I build complete data systems from scratch, like the one that uncovered over $1,500 in weekly waste, demonstrating the ability to create valuable, production-ready solutions from the ground up.</p>
       </div>
       <div class="usp-card rv rv-d1">
-        <div class="usp-icon">🛡️</div>
+        <div class="usp-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
         <h3>Proactive Data Quality Engineer</h3>
         <p>I use Python and SQL to stop data quality issues before they happen. By preventing 20+ problems monthly, I ensure reliable, accurate data that teams can trust for critical decision-making.</p>
       </div>
       <div class="usp-card rv rv-d2">
-        <div class="usp-icon">📊</div>
+        <div class="usp-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="18" y="3" width="4" height="18"/><rect x="10" y="8" width="4" height="13"/><rect x="2" y="13" width="4" height="8"/></svg></div>
         <h3>Insight-First Dashboard Designer</h3>
         <p>I turn complex data into easy-to-understand dashboards, like the Power BI report that surfaced a $1,722 cost impact, giving stakeholders direct, real-time KPI visibility without the noise.</p>
       </div>
       <div class="usp-card rv rv-d3">
-        <div class="usp-icon">📈</div>
+        <div class="usp-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3>Operations Optimizer Through Data</h3>
         <p>I improve business operations by using data to find bottlenecks and forecast trends, consistently saving companies hours of manual work and elevating the quality of strategic decision-making.</p>
       </div>
@@ -424,14 +416,10 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- UMass -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div>
-            <div class="e-company">UMass Amherst</div>
-            <div class="e-role">Data Analyst, Sustainability Research</div>
-          </div>
-          <div class="exp-meta">
-            <span class="e-date">Mar – May 2026</span>
-            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Amherst, MA</span>
-          </div>
+          <div class="e-company">UMass Amherst</div>
+          <span class="e-date">Mar – May 2026</span>
+          <div class="e-role">Data Analyst, Sustainability Research</div>
+          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Amherst, MA</span>
         </div>
         <div class="exp-blocks">
           <div>
@@ -462,14 +450,10 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Pantech AI -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div>
-            <div class="e-company">Pantech AI</div>
-            <div class="e-role">Generative AI Intern</div>
-          </div>
-          <div class="exp-meta">
-            <span class="e-date">Jul – Aug 2025</span>
-            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Remote</span>
-          </div>
+          <div class="e-company">Pantech AI</div>
+          <span class="e-date">Jul – Aug 2025</span>
+          <div class="e-role">Generative AI Intern</div>
+          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Remote</span>
         </div>
         <div class="exp-blocks">
           <div>
@@ -492,14 +476,10 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Data Patterns -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div>
-            <div class="e-company">Data Patterns</div>
-            <div class="e-role">Graduate Engineer Trainee, Data Analyst</div>
-          </div>
-          <div class="exp-meta">
-            <span class="e-date">May 2023 – Jun 2024</span>
-            <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
-          </div>
+          <div class="e-company">Data Patterns</div>
+          <span class="e-date">May 2023 – Jun 2024</span>
+          <div class="e-role">Graduate Engineer Trainee, Data Analyst</div>
+          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
         </div>
         <div class="exp-blocks">
           <div>
@@ -530,13 +510,10 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
       <!-- Aditya Estates -->
       <div class="exp-item rv">
         <div class="exp-header">
-          <div>
-            <div class="e-company">Aditya Estates and Builders</div>
-            <div class="e-role">Business Analyst & Project Lead</div>
-          </div>
-          <div class="exp-meta">
-            <span class="e-date">May 2022 – May 2023</span>
-          </div>
+          <div class="e-company">Aditya Estates and Builders</div>
+          <span class="e-date">May 2022 – May 2023</span>
+          <div class="e-role">Business Analyst &amp; Project Lead</div>
+          <span class="e-loc"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Chennai, India</span>
         </div>
         <div class="exp-blocks">
           <div>
@@ -651,13 +628,13 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
     <h2 class="s-title rv rv-d1">Achievements</h2>
     <div class="ach-cards">
       <div class="ach-card rv">
-        <div class="ac-icon">🏅</div>
+        <div class="ac-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
         <div class="ac-tag">Academic Honor</div>
         <h3>Phi Kappa Phi Honor Society</h3>
         <p>Inducted into one of the most prestigious academic honor societies in the United States, awarded to the top 10% of graduate students at the University of Massachusetts Amherst.</p>
       </div>
       <div class="ach-card rv rv-d1">
-        <div class="ac-icon">🥈</div>
+        <div class="ac-icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
         <div class="ac-tag">Competition</div>
         <h3>International Hackathon Runner-Up</h3>
         <p>Runner-up at Hack@SRET, an international-level hackathon at Sri Ramachandra Institute of Higher Education, competing against cross-disciplinary teams.</p>
@@ -706,33 +683,45 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
     <div class="beyond-layout">
       <div class="b-left rv">
         <div class="b-sec-title">When I'm off the clock</div>
-        <div class="interest-grid">
-          <span class="i-pill">♟ Chess</span>
-          <span class="i-pill">🔢 Sudoku</span>
-          <span class="i-pill">🚴‍♀️ Cycling</span>
-          <span class="i-pill">🧘‍♀️ Yoga</span>
+        <div class="hobby-grid">
+          <div class="hobby-card">
+            <div class="hc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg></div>
+            <span class="hc-label">Chess</span>
+          </div>
+          <div class="hobby-card">
+            <div class="hc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="5" cy="5" r="1.8"/><circle cx="12" cy="5" r="1.8"/><circle cx="19" cy="5" r="1.8"/><circle cx="5" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="19" cy="12" r="1.8"/><circle cx="5" cy="19" r="1.8"/><circle cx="12" cy="19" r="1.8"/><circle cx="19" cy="19" r="1.8"/></svg></div>
+            <span class="hc-label">Sudoku</span>
+          </div>
+          <div class="hobby-card">
+            <div class="hc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17l5.5-9h1.5l1.5 3"/><path d="M14.5 11l4 6"/><path d="M10 8h5"/><circle cx="13" cy="6" r="1.5" fill="currentColor" stroke="none"/></svg></div>
+            <span class="hc-label">Cycling</span>
+          </div>
+          <div class="hobby-card">
+            <div class="hc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div>
+            <span class="hc-label">Yoga</span>
+          </div>
         </div>
-        <p class="b-copy">Chess keeps me strategic, Sudoku keeps me curious, cycling keeps me sane, and yoga keeps me from sounding like a bowl of Rice Krispies every time I stand up. 😄</p>
+        <p class="b-copy">Chess keeps me strategic, Sudoku keeps me curious, cycling keeps me sane, and yoga keeps me from sounding like a bowl of Rice Krispies every time I stand up.</p>
       </div>
       <div class="b-right rv rv-d1">
         <div class="b-sec-title" style="margin-bottom:1.2rem;font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--ink)">Volunteering</div>
         <div class="vol-list">
           <div class="vol-item">
-            <div class="v-icon">📚</div>
+            <div class="v-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
             <div class="v-body">
               <h4>Aashraya: Community Library</h4>
               <p>Helped build a library for the local community. Organized books, set up the space, and made reading accessible to kids and families who didn't have it before.</p>
             </div>
           </div>
           <div class="vol-item">
-            <div class="v-icon">🎓</div>
+            <div class="v-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
             <div class="v-body">
               <h4>Aashraya: Career Counseling</h4>
               <p>Guided students in need on career paths, college options, and goal setting, helping young people figure out what they want and how to get there.</p>
             </div>
           </div>
           <div class="vol-item">
-            <div class="v-icon">🌊</div>
+            <div class="v-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 6V4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg></div>
             <div class="v-body">
               <h4>Walk for Plastic</h4>
               <p>Volunteered to collect plastic waste and raise awareness about plastic pollution in the community. Small action, real impact.</p>
@@ -799,8 +788,8 @@ footer span{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color
             </div>
             <span class="cc-arrow">↗</span>
           </a>
-          <a href="https://calendly.com/srutilnarasimhan/30min" target="_blank" class="cc-row cc-row-cal">
-            <div class="cc-icon cc-icon-cal">
+          <a href="https://calendly.com/srutilnarasimhan/30min" target="_blank" class="cc-row">
+            <div class="cc-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
             <div class="cc-body">
